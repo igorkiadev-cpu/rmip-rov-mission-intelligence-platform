@@ -14,6 +14,14 @@ uploaded_file = st.file_uploader("Upload Mission Log CSV", type=["csv"])
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
 
+    df.columns = df.columns.str.strip().str.lower()
+
+    # Validação de colunas
+    required_columns = ['timestamp', 'depth']
+
+# 🔥 adicionar aqui
+df.columns = df.columns.str.strip().str.lower()
+
     # Validação de colunas
     required_columns = ['timestamp', 'depth']
     for col in required_columns:
