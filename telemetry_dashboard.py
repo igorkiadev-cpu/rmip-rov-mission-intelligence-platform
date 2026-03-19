@@ -1,7 +1,50 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+st.set_page_config(layout="wide")
+
+st.title("ROV Mission Intelligence Platform (RMIP)")
+st.subheader("Telemetry Dashboard")
+
+# Upload do arquivo
+uploaded_file = st.file_uploader("Upload Mission Log CSV", type=["csv"])
+
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
 
-    # ... (todo seu código anterior)
+    # Validação de colunas
+    required_columns = ['timestamp', 'depth']
+    for col in required_columns:
+        if col not in df.columns:
+            st.error(f"Missing required column: {col}")
+            st.stop()
+
+    st.subheader("Mission Data Preview")
+    st.dataframe(df)
+
+    # Gráfico de profundidade
+    fig = px.line(df, x='timestamp', y='depth', title='Depth Over Time')
+    st.plotly_chart(fig, use_container_width=True)
+
+    # Métricas básicas
+    max_depth = df['depth'].max()
+    mean_depth = df['depth'].mean()
+
+    # Signal loss (%)
+    if 'signal_quality' in df.columns:
+        signal_loss = (df['signal_quality'] < 50).sum() / len(df) * 100
+    else:
+        signal_loss = None
+
+    # KPIs
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Max Depth (m)", round(max_depth, 2))
+    col2.metric("Mean Depth (m)", round(mean_depth, 2))
+
+    if signal_loss is not None:
+        col3.metric("Signal Loss (%)", round(signal_loss, 2))
 
     # Alerts
     st.subheader("Operational Alerts")
@@ -12,9 +55,7 @@ if uploaded_file is not None:
     if max_depth > 200:
         st.error("Depth exceeded safe operational limit!")
 
-    # 🔥 3D Visualization (CORRETO AGORA)
-    import plotly.graph_objects as go
-
+    # 🔥 3D Visualization
     if all(col in df.columns for col in ['latitude', 'longitude', 'depth']):
         st.subheader("3D Mission Visualization")
 
@@ -38,16 +79,15 @@ if uploaded_file is not None:
 
         st.plotly_chart(fig_3d, use_container_width=True)
 
-     # Coverage Analysis
-   if all(col in df.columns for col in ['latitude', 'longitude']):
-    st.subheader("Mission Coverage Analysis")
+    # 🔥 Coverage Analysis
+    if all(col in df.columns for col in ['latitude', 'longitude']):
+        st.subheader("Mission Coverage Analysis")
 
-    # Criar grid simples
-    lat_bins = pd.cut(df['latitude'], bins=10)
-    lon_bins = pd.cut(df['longitude'], bins=10)
+        lat_bins = pd.cut(df['latitude'], bins=10)
+        lon_bins = pd.cut(df['longitude'], bins=10)
 
-    coverage = df.groupby([lat_bins, lon_bins]).size().reset_index(name='count')
+        coverage = df.groupby([lat_bins, lon_bins]).size().reset_index(name='count')
 
-    coverage_percent = (len(coverage) / (10 * 10)) * 100
+        coverage_percent = (len(coverage) / (10 * 10)) * 100
 
-    st.metric("Coverage (%)", round(coverage_percent, 2))
+        st.metric("Coverage (%)", round(coverage_percent, 2))
