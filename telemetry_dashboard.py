@@ -13,6 +13,13 @@ uploaded_file = st.file_uploader("Upload Mission Log CSV", type=["csv"])
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
 
+    # Validação de colunas
+    required_columns = ['timestamp', 'depth']
+    for col in required_columns:
+        if col not in df.columns:
+            st.error(f"Missing required column: {col}")
+            st.stop()
+
     st.subheader("Mission Data Preview")
     st.dataframe(df)
 
