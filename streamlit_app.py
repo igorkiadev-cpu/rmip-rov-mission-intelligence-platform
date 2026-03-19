@@ -55,7 +55,7 @@ if uploaded_file is not None:
     if max_depth > 200:
         st.error("Depth exceeded safe operational limit!")
 
-    # 🔥 3D Visualization
+    # 3D Visualization
     if all(col in df.columns for col in ['latitude', 'longitude', 'depth']):
         st.subheader("3D Mission Visualization")
 
@@ -79,7 +79,7 @@ if uploaded_file is not None:
 
         st.plotly_chart(fig_3d, use_container_width=True)
 
-    # 🔥 Coverage Analysis
+    # Coverage Analysis
     if all(col in df.columns for col in ['latitude', 'longitude']):
         st.subheader("Mission Coverage Analysis")
 
