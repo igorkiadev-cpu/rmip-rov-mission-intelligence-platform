@@ -12,7 +12,7 @@ Transforming ROV mission data into actionable subsea engineering insights.
 
 ## 🎥 Dashboard Preview
 
-![ROV Mission Intelligence Demo](GIFs/demo_app.gif)
+![ROV Mission Intelligence Demo](ROV Mission Intelligence Platform (RMIP).mp4)
 
 ---
 
