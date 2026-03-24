@@ -4,6 +4,18 @@ Transforming ROV mission data into actionable subsea engineering insights.
 
 ---
 
+## 📺 Live Demo
+
+🚀 **Access the live application here:** [RMIP - Streamlit App](https://rmip-app-otd.streamlit.app/)
+
+---
+
+## 🎥 Dashboard Preview
+
+![ROV Mission Intelligence Demo](GIFs/demo_app.gif)
+
+---
+
 ## 🌊 Overview
 
 The **ROV Mission Intelligence Platform (RMIP)** is an enterprise-grade analytics solution designed to process, analyze, and visualize subsea ROV mission data.
