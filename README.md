@@ -2,9 +2,7 @@
 
 Transforming ROV mission telemetry into actionable subsea engineering insights.
 
-<p align="center">
-  <img src="rov-mission-intelligence-platform-demo.gif" width="900"/>
-</p>
+![RMIP Demo](./rov-mission-intelligence-platform-demo.gif)
 
 ---
 
