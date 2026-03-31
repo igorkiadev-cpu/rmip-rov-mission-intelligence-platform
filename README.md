@@ -2,28 +2,38 @@
 
 Transforming ROV mission telemetry into actionable subsea engineering insights.
 
-![RMIP Demo](./rov-mission-intelligence-platform-demo.gif)
+## 🚀 Key Highlights
+- Reduced time to analyze ROV telemetry from hours to minutes  
+- Automated detection of operational risks (signal loss, depth violations)  
+- Built with real-world offshore mission context (17+ years experience)  
 
 ---
 
-🚀 Live Application
-
-👉 https://rmip-app-otd.streamlit.app/
+<video controls width="100%">
+  <source src="./rov-mission-intelligence-platform-demo.mp4" type="video/mp4">
+</video>
 
 ---
 
 ## 🚀 Live Application
-
 👉 https://rmip-app-otd.streamlit.app/
 
 ## 📂 GitHub Repository
-
 👉 https://github.com/igorkiadev-cpu/rov-mission-intelligence-platform
 
 ---
 
-## 🌊 Overview
+## 📌 Problem → Solution
+Offshore ROV operations generate massive volumes of telemetry data, but most teams lack tools to extract actionable insights.
 
+RMIP solves this by transforming raw mission data into:
+- Real-time operational visibility  
+- Automated risk detection  
+- Data-driven decision support  
+
+---
+
+## 🌊 Overview
 The ROV Mission Intelligence Platform (RMIP) is an analytics application designed to process, analyze, and visualize subsea ROV mission data.
 
 It enables offshore professionals to:
@@ -34,7 +44,6 @@ It enables offshore professionals to:
 ---
 
 ## 🚀 Features
-
 - 📊 Interactive Telemetry Dashboard  
 - 📈 Depth Analysis & KPIs  
 - ⚠️ Operational Alerts (Signal Loss, Depth Limits)  
@@ -52,9 +61,6 @@ timestamp,depth,latitude,longitude,signal_quality
 ---
 
 ## 🧠 Use Case
-
-ROV missions generate large volumes of telemetry data that are often underutilized.
-
 This platform helps answer critical operational questions:
 - Are we experiencing signal loss?  
 - Is the ROV operating within safe limits?  
@@ -63,11 +69,10 @@ This platform helps answer critical operational questions:
 ---
 
 ## 🛠 Tech Stack
-
-- Python  
-- Pandas  
-- Plotly  
-- Streamlit  
+- Python (Data Processing & Analysis)  
+- Pandas (Data Manipulation)  
+- Plotly (Interactive Visualization)  
+- Streamlit (Data Apps & Dashboards)  
 
 ---
 
@@ -79,19 +84,19 @@ streamlit run dashboards/telemetry_dashboard.py
 ---
 
 ## 👨‍💻 About Me
-
 **Igor Carvalho**  
-Subsea Operations • ROV Systems • Python Data Analysis  
+Subsea Operations • ROV Systems • Data Analytics  
 
-17 years of offshore experience, including 10+ years as a diving supervisor, now focused on applying data analytics to subsea operations.
+17 years of offshore experience, including 10+ years as a Diving Supervisor, now transitioning into Subsea Data Engineering.
+
+Specialized in transforming ROV telemetry into actionable engineering insights using Python, with a focus on operational efficiency, risk detection, and decision support.
 
 🔗 LinkedIn:  
-https://www.linkedin.com/in/igor-carvalho-a5abb3254  
+https://www.linkedin.com/in/igorkiadev  
 
 ---
 
 ## 🚀 Future Improvements
-
-- AI-based anomaly detection  
-- Real-time streaming telemetry  
-- Advanced geospatial analytics  
+- AI-based anomaly detection for ROV telemetry  
+- Real-time data streaming pipeline  
+- Advanced geospatial analytics for mission planning  
