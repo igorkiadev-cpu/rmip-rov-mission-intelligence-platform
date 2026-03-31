@@ -2,11 +2,15 @@
 
 Transforming ROV mission telemetry into actionable subsea engineering insights.
 
+<p align="center">
+  <img src="rov-mission-intelligence-platform-demo.gif" width="900"/>
+</p>
+
 ---
 
-## 📺 Live Demo
+## 🚀 Live Application
 
-🚀 https://rmip-app-otd.streamlit.app/
+👉 https://rmip-app-otd.streamlit.app/
 
 ## 📂 GitHub Repository
 
@@ -38,10 +42,8 @@ It enables offshore professionals to:
 
 ## 📊 Example Data Format
 
-```csv
-timestamp,depth,latitude,longitude,signal_quality
-2024-01-01 10:00:00,120,-23.5,-43.2,80
-```
+timestamp,depth,latitude,longitude,signal_quality  
+2024-01-01 10:00:00,120,-23.5,-43.2,80  
 
 ---
 
@@ -67,16 +69,8 @@ This platform helps answer critical operational questions:
 
 ## ▶️ How to Run Locally
 
-```bash
-pip install -r requirements.txt
-streamlit run dashboards/telemetry_dashboard.py
-```
-
----
-
-## 📷 Demo
-
-![App Demo](GIFs/demo.gif)
+pip install -r requirements.txt  
+streamlit run dashboards/telemetry_dashboard.py  
 
 ---
 
