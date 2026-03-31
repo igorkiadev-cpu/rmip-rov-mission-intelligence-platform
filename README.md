@@ -6,6 +6,12 @@ Transforming ROV mission telemetry into actionable subsea engineering insights.
 
 ---
 
+🚀 Live Application
+
+👉 https://rmip-app-otd.streamlit.app/
+
+---
+
 ## 🚀 Live Application
 
 👉 https://rmip-app-otd.streamlit.app/
